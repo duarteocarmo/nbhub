@@ -1,7 +1,7 @@
 import click
 import requests
 
-POST_URL = "http://localhost:8000/upload"
+POST_URL = "https://nbhub.duarteocarmo.com/upload"
 SITE_POST_LABEL = "notebook-data"
 
 
@@ -18,6 +18,11 @@ SITE_POST_LABEL = "notebook-data"
     ),
 )
 def main(notebook):
+    """Share notebooks from the command line.
+
+
+    NOTEBOOK is the jupyter notebook file you would like to share.
+    """
     check_notebook(notebook)
     click.echo("\nWelcome to NbHub!")
     click.echo("Consider supporting us at: https://duarteocarmo.com\n")
