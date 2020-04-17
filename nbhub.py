@@ -34,7 +34,7 @@ def nbhub(notebook):
         )
 
     else:
-        check_status()
+        assert status_ok(POST_URL) == True
         files = {SITE_POST_LABEL: open(notebook, "rb")}
         response = requests.post(POST_URL, files=files)
         if response.status_code == 200:
@@ -53,13 +53,16 @@ def check_notebook(notebook):
         click.Context.exit(0)
 
 
-def check_status():
+def status_ok(url):
     click.echo("\nQuerying the interwebs.. 🌎")
     try:
-        requests.get(POST_URL)
+        requests.get(url)
     except Exception:
         click.echo("Sorry.. Our service appears to be down atm.")
         click.Context.exit(0)
+        return False
+
+    return True
 
 
 if __name__ == "__main__":
