@@ -1,2 +1,5 @@
 *.ipynb
 env/
+.coverage
+htmlcov/
+
