@@ -17,7 +17,7 @@ SITE_POST_LABEL = "notebook-data"
         allow_dash=False,
     ),
 )
-def main(notebook):
+def nbhub(notebook):
     """Share notebooks from the command line.
 
 
@@ -64,4 +64,4 @@ def check_status():
 
 
 if __name__ == "__main__":
-    main()
+    nbhub()
