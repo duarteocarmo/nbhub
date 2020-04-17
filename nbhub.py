@@ -20,7 +20,6 @@ SITE_POST_LABEL = "notebook-data"
 def nbhub(notebook):
     """Share notebooks from the command line.
 
-
     NOTEBOOK is the jupyter notebook file you would like to share.
     """
     check_notebook(notebook)
