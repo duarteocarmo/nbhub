@@ -1,4 +1,4 @@
 [report]
 omit =
-  tests/data/*
+  tests/*
   */site-packages/*
