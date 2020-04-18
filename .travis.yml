@@ -1,15 +1,15 @@
 language: python
 python:
-- '3.6'
-- '3.7'
-- '3.8'
+  - '3.6'
+  - '3.7'
+  - '3.8'
 install:
-- pip install -r requirements-dev.txt
-- pip install coveralls
+  - pip install -r requirements-dev.txt
+  - pip install coveralls
 script:
-- coverage run -m pytest tests/test_nbhub.py
+  - coverage run -m pytest tests/test_nbhub.py
 after_success:
-- coveralls
+  - coveralls
 deploy:
   provider: pypi
   user: __token__
