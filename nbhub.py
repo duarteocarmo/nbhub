@@ -17,14 +17,14 @@ SITE_POST_LABEL = "notebook-data"
         allow_dash=False,
     ),
 )
-def nbhub(notebook):
+def main(notebook):
     """Share notebooks from the command line.
 
     NOTEBOOK is the jupyter notebook file you would like to share.
     """
     check_notebook(notebook)
     click.echo("\nWelcome to NbHub!")
-    click.echo("Consider supporting us at: https://duarteocarmo.com\n")
+    click.echo("Consider supporting us at: https://nbhub.duarteocarmo.com\n")
     click.echo(f"You are about to publish {notebook}\n")
     click.confirm("Are you sure you want to publish it?", abort=True)
     if click.confirm("Do you wish to set a password?"):
@@ -66,4 +66,4 @@ def status_ok(url):
 
 
 if __name__ == "__main__":
-    nbhub()
+    main()
