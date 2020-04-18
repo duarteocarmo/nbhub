@@ -1,12 +1,17 @@
 language: python
 python:
-  - "3.6"
-  - "3.7"
-  - "3.8"
+- '3.6'
+- '3.7'
+- '3.8'
 install:
-  - pip install -r requirements-dev.txt
-  - pip install coveralls    
+- pip install -r requirements-dev.txt
+- pip install coveralls
 script:
-  - coverage run -m pytest tests/test_nbhub.py 
+- coverage run -m pytest tests/test_nbhub.py
 after_success:
-  - coveralls
+- coveralls
+deploy:
+  provider: pypi
+  user: __token__
+  password:
+    secure: L+P1NyBxjhxURNFQejxWau8ZzGHkPIRjNKw6jkrAd0LPxWb0BKFlXRQKZ9ZZzTQnB8XUa1hxB/SPCvJHZdyUV7++YLuGuQPOc3y14wo4uNmY8H8Zx2BlhgsIEwwUPmXsHEKL+FKlf09VrB8VBf+kGRj3QyHNOk8awNCb8EFE3UmBzDm3+7Pe8J+od+9uyVos/e8WqIga3FwptOULXA8hicYArlT5gp7Qnh0D6K49oaRkoB+KHcJzS7DimubocegGrENpWThtI6tf9kcUqJmTXE/TILkQFm+2ljvL44J+gr/+TOSaz7mwkA7tVJ84TaGBBmP11sen5e+ddp9ef7LS5OWdUOP/nO3l6aT7AeQ/vTwRZa7juVmtS5v1WXLcoFzyek8Ubl5tdq1IQbAxhHdFmln8zjPifNQbzX60tfjCj/a6G+7NNky/9D/x/g7Onn6O9E+GaU87ymhPw95+8ko4HXwTKUKJsAUgniEftZrcSWeevAF7mKl9x2K3JLy1M+pHONzHeGEY9nVBwEyN0xaYnjHNfeaScMM9ntzQR/w9gVU6QEdbpAOXODxyxcYm2n+ARJez8nALjC/jaPciT/ja3F1QEOzNlf05sXg4Qmg2bkLilf6ogIgZkTGGiLtYzwSqs9C0jD7rdqvHEOES5vUEUy7Y9nXyq7zLS3mtl0RnmcQ=
