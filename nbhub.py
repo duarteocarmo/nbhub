@@ -3,7 +3,7 @@ import requests
 
 POST_URL = "https://nbhub.duarteocarmo.com/upload"
 SITE_POST_LABEL = "notebook-data"
-
+SITE_URL = "https://nbhub.duarteocarmo.com"
 
 @click.command()
 @click.argument(
@@ -24,13 +24,13 @@ def main(notebook):
     """
     check_notebook(notebook)
     click.echo("\nWelcome to NbHub!")
-    click.echo("Consider supporting us at: https://nbhub.duarteocarmo.com\n")
+    click.echo(f"Consider supporting us at: {SITE_URL}\n")
     click.echo(f"You are about to publish {notebook}\n")
     click.confirm("Are you sure you want to publish it?", abort=True)
     if click.confirm("Do you wish to set a password?"):
         click.echo("")
         click.echo(
-            f"Private notebooks are not available yet! 😬, check https://duarteocarmo.com for updates"
+            f"Private notebooks are not available yet! 😬, check {SITE_URL} for updates"
         )
 
     else:
