@@ -7,6 +7,6 @@ install:
   - pip install -r requirements-dev.txt
   - pip install coveralls    
 script:
-  - pytest
+  - coverage run -m pytest tests/test_nbhub.py 
 after_success:
   - coveralls
