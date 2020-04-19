@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="nbhub",
-    version="20.4b1",
+    version="20.4b2",
     author="Duarte O.Carmo",
     author_email="duarteocarmo@gmail.com",
     description="Publish jupyter notebooks from the command line.",
